@@ -1,6 +1,8 @@
-@charset "UTF-8";
+@charset "UTF-8"; /* buen hábito */
 
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');* {
+@import url('https://fonts.googleapis.com/css2?family=Labrada:wght@300;400;500&display=swap'); /* woff2 web open font face 2 */
+
+* {
     margin: 0;
     padding: 0;
     font-weight: 400;
@@ -11,23 +13,22 @@ html, body{
 }
 
 body {
-    font-family: 'Oxygen', sans-serif;
-    background: linear-gradient(#f4ffff,#c1cde5);
-    color: #15001c;
+    font-family: 'Labrada', serif;
+    background: linear-gradient(#ffd1bd,#d0a8e5);
+    color: #FFB6C1;
 }
+
 h1{
-        font-weight: 800;
-
-
+    font-weight: 500; /* podría también poner otra tipografía, seleccionar en GoogleFonts las dos tipografías y copiar-pegar en el @import. Definir en el hX la nueva tipografía con la misma estructura de la linea 16*/
 }
 
 a {
-    color: #61416d;
+    color: #FFF0F5;
     text-decoration: none;
 }
 
 a:hover, a.active {
-    color: #361942;
+    color: #D3D3D3;
     transition: color ease .5s;
 }
 
@@ -69,19 +70,19 @@ main div {
 }
 
 main div p{
-    background-image: url('img/solcito.svg');
+    background-image: url('images/stars.svg');
     background-size: 1rem 1rem;
     background-repeat:no-repeat;
     background-position: 0 0.15rem;
     text-indent: 1.5rem;
 }
 
-main div p:hover{
-    opacity:0;
-    transform:rotate(0.5turn);
+/*main div p:hover{
+    opacity: 0;
+    transform: rotate(0.5turn);
     transform-origin: center center;
-    transition:all ease 3s;
-}
+    transition: all ease 3s;
+}*/
 
 main div h1, main div p{
     text-align: left;
@@ -91,9 +92,6 @@ main div img{
     height:50vh;
     width:auto;
     margin: 0 auto;
-    transform:rotate(2turn);
-    transform-origin: center center;
-    transition:all ease 10s;
 }
 
 @media (orientation:portrait){
