@@ -1,0 +1,96 @@
+<!DOCTYPEhtml >
+< html  lang =" es " >
+    < cabeza >
+        < juego de caracteres meta  =" utf-8 " />
+        < meta  name =" viewport " content =" ancho=ancho-del-dispositivo, escala-inicial=1 "/>
+        < meta  name =" autor " contenido =" Nombre Apellido "/>
+        < meta  nombre =" descripción " contenido =" Diseño y nuevos medios " />
+        < título > DNO037 </ título >
+        < enlace  rel =" hoja de estilo " href =" estilo.css " />
+    </ cabeza >
+    < cuerpo >
+        < div  clase =" contenedor " >
+            < navegación >
+                < p > < a  href =" index.html " > Portada </ a >  < a  href =" pagina.html?x=1 " > Talca </ a >  < a  href =" pagina.html?x=2 " > París </ a >  < a  href =" page.html?x=3 " > Londres </ a > </ p >
+            </nav> _ _
+            <principal> _ _
+                <div> _ _
+                    < h1 > WeatherBot </ h1 >
+                </div> _ _
+                <div> _ _
+                    < img />
+                </div> _ _
+            </ principal >
+            < pie de página >
+                < p > < a  href =" # " > Nombre Apellido </ a >  < a  href =" # " > DNO037 </ a > </ p >
+            </ pie de página >
+        </div> _ _
+        < script  src =" https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js " integridad =" sha512-3RlxD1bW34eFKPwj9gUXEWtdSMC59QqIqHnD8O/NoTwSJhgxRizdcFVQhUMFyTp5RwLTDL0LbqFAgtzol8b = " directriz anónima de referencia cruzada " =" sin referente " > </ script >
+        < guión >
+            var  url  =  new  URLSearchParams ( ventana.ubicación.búsqueda ) ; _ _ _ _
+
+            var  seleccionado  =  url . obtener ( "x" ) ;
+
+            var  datos ;
+
+            var  texto  =  documento . querySelector ( "principal" ) . getElementsByTagName ( "div" ) [ 0 ] ;
+
+            var  imagen  =  documento . querySelector ( "principal" ) . getElementsByTagName ( "div" ) [ 1 ] . getElementsByTagName ( "img" ) [ 0 ] ;
+
+            //revisamos https://openweathermap.org/current
+
+            si  ( seleccionado  ==  1 )  {
+                función  de precarga ( )  {
+                    data  =  loadJSON ( "https://api.openweathermap.org/data/2.5/weather?lat=-35.42&lon=-71.66&units=metric&appid=ReemplaceEstoConSuApiKey&lang=es" ) ;
+                }
+            }  else  if  ( seleccionado  ==  2 )  {
+                función  de precarga ( )  {
+                    datos  =  cargarJSON ( ) ;
+                }
+            }  else  if  ( seleccionado  ==  3 )  {
+                función  de precarga ( )  {
+                    datos  =  cargarJSON ( ) ;
+                }
+            }  más  {
+                data  =  "Algo salió mal" ;
+            }
+
+             configuración de funciones ( )  {
+                noLienzo ( ) ;
+
+                var  lugar ;
+
+                interruptor  ( datos . nombre )  {
+                    caso  "Londres" :
+                        lugar  =  "en Londres" ;
+                        romper ;
+                    caso  "Talca" :
+                        lugar  =  "en Talca" ;
+                        romper ;
+                    caso  "París" :
+                        lugar  =  "en París" ;
+                        romper ;
+                    predeterminado :
+                        lugar  =  "por alla" ;
+                }
+
+                if  ( data  !=  "Algo salió mal" )  {
+                    createElement ( "p" ,  data . weather [ 0 ] . description  +  " "  +  lugar  +  ", con una temperatura de "  +  Math . round ( data . main . temp )  +  "ºC." ) . padre ( texto ) ;
+                    consola _ registro ( datos ) ;
+                    //vamos a buscar un ícono provisorio en https://openweathermap.org/weather-conditions
+                    imagen _ setAttribute ( "src" ,  "http://openweathermap.org/img/wn/"  +  datos . tiempo [ 0 ] . icono  +  "@4x.png" ) ;
+
+                    si  ( seleccionado  ==  1 )  {
+                        seleccionar Todo ( "navegación" ) [ 1 ] . addClass ( "activo" ) ;
+                    }  else  if  ( seleccionado  ==  2 )  {
+                        seleccionar Todo ( "navegación" ) [ 2 ] . addClass ( "activo" ) ;
+                    }  más  {
+                        seleccionar Todo ( "navegación" ) [ 3 ] . addClass ( "activo" ) ;
+                    }
+                }  más  {
+                    createElement ( "p" ,  datos ) . padre ( texto ) ;
+                }
+            }
+        </ guión >
+    </ cuerpo >
+</html> _ _
