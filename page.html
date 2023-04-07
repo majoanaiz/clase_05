@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="author" content="Nombre Apellido" />
+        <meta name="author" content="Magdalena Muñoz" />
         <meta name="description" content="Diseño y nuevos medios" />
         <title>DNO037</title>
         <link rel="stylesheet" href="style.css" />
@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <nav>
-                <p><a href="index.html">Portada</a> <a href="page.html?x=1">Melipilla</a> <a href="page.html?x=2">Nueva York</a> <a href="page.html?x=3">Venecia</a></p>
+                <p><a href="index.html">Inicio</a> <a href="page.html?x=1">Seul</a> <a href="page.html?x=2">Copiapo</a> <a href="page.html?x=3">Sicilia</a></p>
             </nav>
             <main>
                 <div>
@@ -22,7 +22,7 @@
                 </div>
             </main>
             <footer>
-                <p><a href="https://github.com/majoanaiz">Majo Anaiz</a> <a href="#">DNO037</a></p>
+                <p><a href="https://github.com/majoanaiz">majo anaiz</a> <a href="https://github.com/profesorfaco/dno037-2023">DNO037</a></p>
             </footer>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js" integrity="sha512-3RlxD1bW34eFKPwj9gUXEWtdSMC59QqIqHnD8O/NoTwSJhgxRizdcFVQhUMFyTp5RwLTDL0Lbcqtl8b7bFAzog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -39,17 +39,17 @@
 
             //revisemos https://openweathermap.org/current
 
-            if (seleccionada == 1) {
+            if (seleccionada == 1) { //2 = es para preguntar por la igualdad, 1 = es asignar un valor. 
                 function preload() {
-                    data = loadJSON("https://api.openweathermap.org/data/2.5/weather?lat=-33.7&lon=-71.21&units=metric&appid=2956bc43a78884b4734c34cc20a33f49&lang=es");
+                    data = loadJSON("https://api.openweathermap.org/data/2.5/weather?lat=-39.81&lon=-73.24&units=metric&appid=9a36ac1887e50688ad619093a00f2f1c&lang=es");
                 }
             } else if (seleccionada == 2) {
                 function preload() {
-                    data = loadJSON("https://api.openweathermap.org/data/2.5/weather?lat=40.7&lon=-74.00&units=metric&appid=2956bc43a78884b4734c34cc20a33f49&lang=es");
+                    data = loadJSON("https://api.openweathermap.org/data/2.5/weather?lat=-33&lon=-71.2&units=metric&appid=9a36ac1887e50688ad619093a00f2f1c&lang=es");
                 }
             } else if (seleccionada == 3) {
                 function preload() {
-                    data = loadJSON("https://api.openweathermap.org/data/2.5/weather?lat=45.43&lon=12.33&units=metric&appid=2956bc43a78884b4734c34cc20a33f49&lang=es");
+                    data = loadJSON("https://api.openweathermap.org/data/2.5/weather?lat=-42.62&lon=-73.77&units=metric&appid=9a36ac1887e50688ad619093a00f2f1c&lang=es");
                 }
             } else {
                 data = "Algo salió mal";
@@ -61,14 +61,14 @@
                 var lugar;
 
                 switch (data.name) {
-                    case "New York":
-                        lugar = "en Nueva York";
+                    case "Seul":
+                        lugar = "en Seul";
                         break;
-                    case "Melipilla":
-                        lugar = "en Melipilla";
+                    case "Copiapo":
+                        lugar = "en Copiapo";
                         break;
-                    case "Venice":
-                        lugar = "en Venecia";
+                    case "Sicilia":
+                        lugar = "en Sicilia";
                         break;
                     default:
                         lugar = "por allá";
