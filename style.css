@@ -14,7 +14,7 @@ html, body{
 
 body {
     font-family: 'Labrada', serif;
-    background: linear-gradient(#FFF0F5,##FFC0CB);
+    background: linear-gradient(#ff0f5,##ffc0cb);
     color: ##696969;
 }
 
@@ -28,7 +28,7 @@ a {
 }
 
 a:hover, a.active {
-    color: #FFB6C1;
+    color: #ffb6c1;
     transition: color ease .5s;
 }
 
